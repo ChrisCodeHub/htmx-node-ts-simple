@@ -9,6 +9,13 @@ h2
 p #[strong Name:] #{contact.name}
 p #[strong Email:] #{contact.email}
 
+img(
+  src='images/image_1.png',
+  alt=`Avatar of ${contact.name}`,
+  width='100',
+  height='100'
+)
+
 div.actions
   form(method='POST', action=`/delete/${contact.id}?_method=DELETE`)
     button(
