@@ -1,5 +1,11 @@
-h2 #{contact.name}
-
+h2 
+  | #{contact.name} 
+  span(
+    hx-get=`/contacts/${contact.id}/count`,
+    hx-trigger='every 2s',
+    hx-swap='innerHTML'
+  ) #{contact.count || 0}
+  
 p #[strong Name:] #{contact.name}
 p #[strong Email:] #{contact.email}
 

@@ -4,6 +4,13 @@ import Contacts from '../models/contacts'
 const router = Router();
 
 const contacts = Contacts;      
+let magicCount = 0
+
+router.get('/contacts/:id/count', (req, res) => {
+  const count = magicCount;// getCountForContact(req.params.id);
+  res.send(count.toString());
+  magicCount++;
+});
 
 // GET /contacts
 router.get('/contacts', (req, res) => {
